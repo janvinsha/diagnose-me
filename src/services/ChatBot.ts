@@ -14,7 +14,7 @@ export interface IConversation {
   timestamp?: number;
 }
 
-//CHATBOT OF THE AI PROMPT BUILDER
+//CHATBOT OF THE AI DOCTOR
 export class ChatBot {
   private readonly openAi: typeof OpenAIApi;
   //The conversation is static because the instance might be created again in nextjs so it's best to keep it this way
