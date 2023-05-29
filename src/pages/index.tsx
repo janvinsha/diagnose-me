@@ -55,11 +55,11 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col py-4 pb-20 p-2 items-center gap-2 md:gap-6">
+    <div className="flex h-screen flex-col py-6 pb-20 p-2 items-center gap-4 md:gap-6">
       <MetaTags title="App" />
       <h1 className="text-xl font-semibold">DIAGNOSE ME</h1>
       <div className="flex w-5/5 h-5/6 border-r-2 gap-10 flex-col md:flex-row md:w-3/5">
-        <div className="flex flex-col bg-[#36152D] h-full w-full rounded-lg p-4 md:p-8 text-white text-sm justify-between">
+        <div className="flex flex-col bg-[#261434] h-full w-full rounded-lg p-4 md:p-8 text-white text-sm justify-between">
           <div className="flex flex-col overflow-y-scroll h-full gap-4 scroll-smooth ">
             {[
               {
@@ -86,7 +86,7 @@ const Home: NextPage = () => {
                       {
                         "bg-none border border-[#FFFFFF] p-2 border-opacity-20":
                           message.author === "LEAD",
-                        "bg-[#43233A] p-4 ": message.author !== "LEAD",
+                        "bg-[#4a2765] p-4 ": message.author !== "LEAD",
                       },
                       "rounded-lg w-fit"
                     )}
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
                 </div>
               ))}
             {loading && (
-              <div className="bg-none border-opacity-20 bg-[#43233A] p-4 rounded-lg w-fit">
+              <div className="bg-none border-opacity-20 bg-[#4a2765] p-4 rounded-lg w-fit">
                 The Doctor is Typing ...
               </div>
             )}
@@ -109,7 +109,7 @@ const Home: NextPage = () => {
               value={reply}
               onKeyDown={keyDownHandler}
             />
-            <Button onClick={replyHandler}>Send</Button>
+            <Button onClick={replyHandler} className="bg-[#4a2765]">Send</Button>
           </div>
         </div>
       </div>

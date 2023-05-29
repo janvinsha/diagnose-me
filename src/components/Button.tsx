@@ -8,8 +8,8 @@ export type ButtonVariants = "primary" | "secondary" | "danger" | "material";
 
 interface Props
   extends DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
   > {
   size?: "sm" | "md" | "lg" | "xl";
   variant?: ButtonVariants;
@@ -51,7 +51,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(function Button(
         className={clsx(
           "absolute focus:outline-none inset-0 w-full h-full transition duration-200 ease-in-out transform rounded-md md:rounded-md",
           {
-            "border border-[#0E70E2]": variant === "primary",
+            "border border-[#4a2765]": variant === "primary",
             "bg-transparent": variant === "secondary",
             "bg-opacity-25 dark:group-hover:bg-indigo-900 group-hover:bg-indigo-100 !transition-none":
               variant === "material",
@@ -63,7 +63,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(function Button(
       />
       <span
         className={clsx("absolute inset-0 w-full h-full rounded-md", {
-          "bg-[#0E70E2] border border-[#0E70E2] md:rounded-md":
+          "bg-[#4a2765] border border-[#4a2765] md:rounded-md":
             variant === "primary",
           "bg-transparent md:rounded-md": variant === "secondary",
           "bg-red-500 border border-red-500 md:rounded-md":
