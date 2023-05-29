@@ -59,10 +59,7 @@ export class ChatBot {
             : "system";
       return {
         role,
-        content:
-          c.author === "SYSTEM"
-            ? c.message
-            : `${c.message}, Time in Unix format: ${c.timestamp}`,
+        content: c.message
       };
     });
     return dialog;
@@ -70,22 +67,18 @@ export class ChatBot {
 
   //this methods pushed the message to the conversation
   pushConversation(response: typeof OpenAIResponse) {
-    let timestamp = new Date().getTime();
     ChatBot.conversation.push({
-
       message: response["data"]["choices"][0]["message"]["content"],
       author: "USER",
-      timestamp,
     });
   }
 
   //method to create the next message
   public async createNextMessage(message: string): Promise<string[]> {
-    let timestamp = new Date().getTime();
+
     const newMessage = {
       author: "LEAD",
       message: message,
-      timestamp,
     };
     ChatBot.conversation.push(newMessage);
     const dialog = this.getDialog();

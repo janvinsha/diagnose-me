@@ -33,13 +33,11 @@ const Home: NextPage = () => {
     }
   }
   const replyHandler = async () => {
-    let timestamp = new Date().getTime();
     let newMessages = [
       ...messages,
       {
         author: "LEAD",
         message: reply,
-        timestamp,
       },
     ];
     setMessages(newMessages);
@@ -57,7 +55,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col py-4 items-center gap-2 md:gap-6">
+    <div className="flex h-screen flex-col py-4 pb-20 p-2 items-center gap-2 md:gap-6">
       <MetaTags title="App" />
       <h1 className="text-xl font-semibold">DIAGNOSE ME</h1>
       <div className="flex w-5/5 h-5/6 border-r-2 gap-10 flex-col md:flex-row md:w-3/5">
