@@ -84,7 +84,7 @@ export class ChatBot {
     const dialog = this.getDialog();
     const response: typeof OpenAIResponse =
       await this.openAi.createChatCompletion({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: dialog,
       });
 
