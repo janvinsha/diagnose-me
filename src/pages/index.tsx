@@ -8,8 +8,8 @@ import {
   MetaTags,
   Button,
 } from "../components";
+import { Footer } from "@/components/Footer";
 const Home: NextPage = () => {
-
 
   const [reply, setReply] = useState("");
 
@@ -19,7 +19,6 @@ const Home: NextPage = () => {
 
   const chatbot = ChatBot.create(
   );
-
 
   async function processNextMessage(message: string) {
     try {
@@ -32,6 +31,7 @@ const Home: NextPage = () => {
       setLoading(false);
     }
   }
+
   const replyHandler = async () => {
     let newMessages = [
       ...messages,
@@ -55,9 +55,9 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col py-6 pb-20 p-2 items-center gap-4 md:gap-6">
+    <div className="flex h-screen flex-col py-10 pb-20 p-2 items-center gap-4 md:gap-6">
       <MetaTags title="App" />
-      <h1 className="text-xl font-semibold">DIAGNOSE ME</h1>
+      <h1 className="text-xl font-semibold italic">DIAGNOSE-ME</h1>
       <div className="flex w-5/5 h-5/6 border-r-2 gap-10 flex-col md:flex-row md:w-3/5">
         <div className="flex flex-col bg-[#261434] h-full w-full rounded-lg p-4 md:p-8 text-white text-sm justify-between">
           <div className="flex flex-col overflow-y-scroll h-full gap-4 scroll-smooth ">
@@ -75,9 +75,9 @@ const Home: NextPage = () => {
                   {message.author != "default" && (
                     <span className="text-xs opacity-30">
                       {message.author === "LEAD"
-                        ? "Doctor"
+                        ? "Me"
                         : message.author === "USER"
-                          ? "Me"
+                          ? "Doctor"
                           : ""}
                     </span>
                   )}
@@ -113,6 +113,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

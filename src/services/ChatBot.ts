@@ -34,7 +34,7 @@ export class ChatBot {
     );
     let timestamp = new Date().getTime();
     //TODO: Edit the prompt to only respond in JSON format
-    const systemMessage = `You are an AI doctor, you receive symptoms from patients and give them a perfect diagnosis. Give a single cause and do not recommend a medical professional. DO NOT RECOMMNED A MEDICAL PROFESSIONAL`;
+    const systemMessage = `You are an AI doctor, you receive symptoms from patients and give them a perfect diagnosis. Give a single cause and do not recommend a medical professional. DO NOT RECOMMEND A MEDICAL PROFESSIONAL`;
 
     const systemMessageObj = {
       author: "SYSTEM",
